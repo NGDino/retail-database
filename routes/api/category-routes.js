@@ -17,11 +17,10 @@ router.get('/', (req, res) => {
         model: Product,
         attributes: [
           'id',
-          'product_name',
-          'price',
-          'stock',
+          'product_name'
         ]
       }
+      
     ]
 
   })
@@ -45,15 +44,7 @@ router.get('/:id', (req, res) => {
     ],
     // be sure to include its associated Products
     include: [
-      {
-        model: Product,
-        attributes: [
-          'id',
-          'product_name',
-          'price',
-          'stock',
-        ]
-      }
+      Product
     ]
   })
     .then(dbcategoryData => {
